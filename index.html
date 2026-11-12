@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Buscar Pokémon</title>
+</head>
+<body>
+
+    <main>
+        <h1>Buscar Pokémon</h1>
+
+        <form id="formPoke">
+            <input
+            type="number"
+            id="idPoke"
+            placeholder="Digite o ID"
+            min="1"
+            required>
+
+            <button type="submit">Buscar</button>
+        </form>
+
+        <p id="msg"></p>
+
+        <!-- O card do Pokémon -->
+        <div id="resultado" class="card">
+            <div class="card-interno">
+
+                <!-- topo: nome e PS -->
+                <div class="card-topo">
+                    <span class="selo">BÁSICO</span>
+                    <h2 id="nomePokemon"></h2>
+                    <span class="ps">PS <strong id="psPoke"></strong></span>
+                </div>
+
+                <!-- imagem -->
+                <div class="card-imagem">
+                    <img src="" alt="Imagem do Pokémon" id="imgPoke">
+                </div>
+
+                <!-- faixa prateada com número, altura e peso -->
+                <div class="card-faixa">
+                    Nº <span id="numPoke"></span> &nbsp;
+                    Altura: <span id="alturaPoke"></span> &nbsp;
+                    Peso: <span id="pesoPoke"></span>
+                </div>
+
+                <!-- corpo do card, parecido com os ataques -->
+                <div class="card-corpo">
+                    <div class="linha">
+                        <span class="nome-linha">Tipo</span>
+                        <strong id="tipoPoke"></strong>
+                    </div>
+                    <div class="linha">
+                        <span class="nome-linha">Experiência base</span>
+                        <strong id="basePoke"></strong>
+                    </div>
+
+                    <button type="button" id="btnSom">🔊 Ouvir som</button>
+                    <audio id="somPoke"></audio>
+                </div>
+
+                <!-- rodapé -->
+                <div class="card-rodape">
+                    Card criado com dados da PokéAPI
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

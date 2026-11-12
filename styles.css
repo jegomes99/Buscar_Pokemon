@@ -1,0 +1,236 @@
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #2b2d42, #1a1b2e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 16px;
+}
+
+main {
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffcb05;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-shadow: 2px 2px 0 #2a75bb;
+}
+
+/* ===== Formulário ===== */
+#formPoke {
+    display: flex;
+    gap: 8px;
+}
+
+#idPoke {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+}
+
+#idPoke:focus {
+    border-color: #ffcb05;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ef5350;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c62828;
+}
+
+#msg {
+    margin-top: 14px;
+    min-height: 20px;
+    color: #ffcb05;
+    font-weight: bold;
+}
+
+/* ============================================
+   CARD
+   ============================================ */
+
+/* cores padrão do card (são trocadas pelo tipo lá embaixo) */
+.card {
+    --cor: #f08030;        /* cor principal */
+    --cor-clara: #f8b878;  /* cor do fundo do corpo */
+}
+
+/* borda prateada de fora */
+#resultado {
+    display: none; /* fica escondido até buscar */
+    margin-top: 12px;
+    padding: 10px;
+    background: linear-gradient(135deg, #e0e0e0, #a8a8a8, #e8e8e8);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+#resultado.ativo {
+    display: block;
+}
+
+/* parte colorida de dentro */
+.card-interno {
+    background: linear-gradient(180deg, var(--cor), var(--cor-clara));
+    border-radius: 8px;
+    padding: 8px 12px 10px;
+}
+
+/* ----- topo ----- */
+.card-topo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.selo {
+    font-size: 10px;
+    font-style: italic;
+    font-weight: bold;
+    background: linear-gradient(90deg, #d0d0d0, #ffffff);
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+
+#nomePokemon {
+    flex: 1;
+    font-size: 22px;
+    color: #1a1a1a;
+    text-transform: capitalize; /* primeira letra maiúscula */
+}
+
+.ps {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+#psPoke {
+    font-size: 26px;
+}
+
+/* ----- imagem ----- */
+.card-imagem {
+    background: linear-gradient(180deg, #bde3f7 0%, #fff6d5 70%, #a5d68f 100%);
+    border: 4px solid #d4af37; /* moldura dourada */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgPoke {
+    height: 100%;
+    filter: drop-shadow(3px 5px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* ----- faixa prateada ----- */
+.card-faixa {
+    background: linear-gradient(90deg, #c0c0c0, #f5f5f5, #c0c0c0);
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+    padding: 3px 6px;
+    margin: 6px 8px 0;
+    border-radius: 0 0 6px 6px;
+}
+
+/* ----- corpo ----- */
+.card-corpo {
+    padding: 16px 6px 10px;
+    min-height: 140px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.nome-linha {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+.linha strong {
+    font-size: 22px;
+    color: #1a1a1a;
+}
+
+/* botão de som */
+#btnSom {
+    display: block;
+    margin: 16px auto 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+}
+
+#btnSom:hover {
+    background-color: #000000;
+}
+
+/* ----- rodapé ----- */
+.card-rodape {
+    font-size: 10px;
+    font-style: italic;
+    text-align: right;
+    color: #1a1a1a;
+    border-top: 2px solid rgba(255, 255, 255, 0.6);
+    padding-top: 6px;
+}
+
+/* ============================================
+   CORES POR TIPO
+   ============================================ */
+.tipo-fire     { --cor: #f08030; --cor-clara: #f8b878; }
+.tipo-water    { --cor: #6890f0; --cor-clara: #a8c0f8; }
+.tipo-grass    { --cor: #78c850; --cor-clara: #b8e098; }
+.tipo-electric { --cor: #f8d030; --cor-clara: #fce890; }
+.tipo-ice      { --cor: #98d8d8; --cor-clara: #d0f0f0; }
+.tipo-fighting { --cor: #c03028; --cor-clara: #e08880; }
+.tipo-poison   { --cor: #a040a0; --cor-clara: #d098d0; }
+.tipo-ground   { --cor: #e0c068; --cor-clara: #f0e0b0; }
+.tipo-flying   { --cor: #a890f0; --cor-clara: #d0c8f8; }
+.tipo-psychic  { --cor: #f85888; --cor-clara: #f8a8c0; }
+.tipo-bug      { --cor: #a8b820; --cor-clara: #d8e080; }
+.tipo-rock     { --cor: #b8a038; --cor-clara: #e0d098; }
+.tipo-ghost    { --cor: #705898; --cor-clara: #b0a0d0; }
+.tipo-dragon   { --cor: #7038f8; --cor-clara: #b098f8; }
+.tipo-dark     { --cor: #705848; --cor-clara: #b0a090; }
+.tipo-steel    { --cor: #b8b8d0; --cor-clara: #e0e0ec; }
+.tipo-fairy    { --cor: #ee99ac; --cor-clara: #f8d0d8; }
+.tipo-normal   { --cor: #a8a878; --cor-clara: #d8d8c0; }
